@@ -57,21 +57,7 @@ public class UserController {
         return ResponseEntity.ok(updatedUser);
     }
 
-//    /** DELETE */
-//    @DeleteMapping("/user/{id}")
-//    public ResponseEntity<?> deleteUser(@PathVariable(value = "id") Integer id)
-//            throws ResourceNotFoundException {
-//        userRepository.findById(id)
-//                .orElseThrow(() -> new ResourceNotFoundException("user not found for this id :: " + id));
-//
-//        userRepository.deleteById(id);
-//
-//        return ResponseEntity.ok().build();
-//    }
-
-
-
-    /** DELETE 2*/
+    /** DELETE */
     @DeleteMapping("/user/{id}")
     public Map<String, Boolean> deleteUser1(@PathVariable(value = "id") Integer id)
             throws ResourceNotFoundException {
@@ -83,4 +69,16 @@ public class UserController {
         response.put("deleted", Boolean.TRUE);
         return response;
     }
+
+    //    /** DELETE 2 */
+//    @DeleteMapping("/user/{id}")
+//    public ResponseEntity<?> deleteUser(@PathVariable(value = "id") Integer id)
+//            throws ResourceNotFoundException {
+//        userRepository.findById(id)
+//                .orElseThrow(() -> new ResourceNotFoundException("user not found for this id :: " + id));
+//
+//        userRepository.deleteById(id);
+//
+//        return ResponseEntity.ok().build();
+//    }
 }
