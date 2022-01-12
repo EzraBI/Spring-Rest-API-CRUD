@@ -31,6 +31,7 @@ public class UserController {
             throws ResourceNotFoundException {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("user not found for this id :: " + id));
+        //.orElseThrow () internally uses functional interfaces which are implemented by lambda expression (->) else need to parse -> to it.
         return ResponseEntity.ok().body(user);
     }
 
