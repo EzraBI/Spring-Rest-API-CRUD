@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/v1/")
@@ -34,6 +35,8 @@ public class UserController {
         //.orElseThrow () internally uses functional interfaces which are implemented by lambda expression (->) else need to parse -> to it.
         return ResponseEntity.ok().body(user);
     }
+
+
 
     /** CREATE / SAVE  */
     // @RequestBody Uses http message convertors to convert json message into java object
